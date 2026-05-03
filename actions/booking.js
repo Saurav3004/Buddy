@@ -1,7 +1,8 @@
 "use server";
 
-import { createRateLimiter } from "@/lib/arcjet";
+import { checkRateLimit, createRateLimiter } from "@/lib/arcjet";
 import { db } from "@/lib/prisma";
+import { request } from "@arcjet/next";
 import { currentUser } from "@clerk/nextjs/server";
 import { StreamClient } from "@stream-io/node-sdk";
 import { revalidatePath } from "next/cache";
@@ -31,7 +32,7 @@ export const getInterviewerProfile = async (interviewerId) => {
                     select:{startTime:true,endTime:true},
                     take:1
                 },
-                bookingsAsInterviewer:{
+                bookingAsInterviewer:{
                     where: {status:"SCHEDULED"},
                     select:{startTime:true,endTime:true}
                 }
@@ -50,6 +51,11 @@ export const bookSlot = async ({interviewerId,startTime,endTime}) => {
         if(!user){
             throw new Error("Unauthorized")
         };
+
+        const req = await request();
+        const rateLimitError = await checkRateLimit(bookingLimiter,req,user.id);
+        if(rateLimitError) throw new Error(rateLimitError);
+
         
         const [dbUser,interviewer] = await Promise.all([
             db.user.findUnique({where:{clerkUserId:user.id}}),
