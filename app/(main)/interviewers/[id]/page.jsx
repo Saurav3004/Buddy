@@ -16,6 +16,7 @@ const InterviewerProfilePage = async ({params}) => {
   const {id} = await params;
 
   const dbUser = await getCurrentUser()
+  console.log(dbUser)
   const interviewer = await getInterviewerProfile(id);
   if(!interviewer) notFound()
   return (

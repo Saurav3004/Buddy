@@ -12,7 +12,8 @@ export const getCurrentUser = async () => {
             name:true,
             title:true,
             company:true,
-            imageUrl:true
+            imageUrl:true,
+            credits:true
         }
     })
 }
