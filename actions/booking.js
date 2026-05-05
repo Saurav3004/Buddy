@@ -52,9 +52,9 @@ export const bookSlot = async ({interviewerId,startTime,endTime}) => {
             throw new Error("Unauthorized")
         };
 
-        const req = await request();
-        const rateLimitError = await checkRateLimit(bookingLimiter,req,user.id);
-        if(rateLimitError) throw new Error(rateLimitError);
+        // const req = await request();
+        // const rateLimitError = await checkRateLimit(bookingLimiter,req,user.id);
+        // if(rateLimitError) throw new Error(rateLimitError);
 
         
         const [dbUser,interviewer] = await Promise.all([
@@ -75,7 +75,7 @@ export const bookSlot = async ({interviewerId,startTime,endTime}) => {
             throw new Error("Insufficient credits. Please upgrade your plan.")
         };
 
-        const conflict = db.booking.findFirst({
+        const conflict = await db.booking.findFirst({
             where:{
                 interviewerId,
                 status:"SCHEDULED",
@@ -143,7 +143,7 @@ export const bookSlot = async ({interviewerId,startTime,endTime}) => {
                         startTime: new Date(startTime),
                         endTime: new Date(endTime),
                         status:"SCHEDULED",
-                        creditsCharged:credits,
+                        creditCharged:credits,
                         streamCallId
                     }
                 })

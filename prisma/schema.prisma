@@ -53,7 +53,7 @@ model Booking {
   status        BookingStatus       @default(SCHEDULED)
   creditCharged Int
   streamCallId  String?             @unique
-  recordingUrl  String
+  recordingUrl  String?
   createdAt     DateTime            @default(now())
   updatedAt     DateTime            @updatedAt
   interviewee   User                @relation("IntervieweeBookings", fields: [intervieweeId], references: [id])
