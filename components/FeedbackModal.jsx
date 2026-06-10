@@ -13,7 +13,7 @@ import {
   MessageSquare,
   Brain,
   CheckCircle2,
-  AlertCircle,
+  AlertCircle, BotIcon,
 } from "lucide-react";
 import { GrayTitle } from "@/components/reusable";
 import { RATING_CONFIG } from "@/lib/data";
@@ -64,7 +64,7 @@ export function FeedbackModal({
           {/* Summary */}
           <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
             <div className="flex items-center gap-2 mb-2">
-              <Sparkles size={13} className="text-amber-400" />
+              <Sparkles size={13} className="text-blue-400" />
               <p className="text-[10px] uppercase tracking-widest text-stone-500">
                 Summary
               </p>
@@ -74,8 +74,11 @@ export function FeedbackModal({
 
           {/* Recommendation */}
           <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
-            <p className="text-[10px] uppercase tracking-widest text-stone-500 mb-2">
-              Recommendation
+            <p className="flex gap-2 text-[10px] uppercase tracking-widest text-stone-500 mb-2">
+              <BotIcon size={13} className="text-blue-400" />
+              <p className="text-[10px] uppercase tracking-widest text-stone-500">
+                Recommendation
+              </p>
             </p>
             <p className="text-sm text-stone-300">{feedback.recommendation}</p>
           </div>
@@ -84,17 +87,17 @@ export function FeedbackModal({
           <div className="grid gap-3">
             {[
               {
-                icon: <Brain size={14} className="text-amber-400" />,
+                icon: <Brain size={14} className="text-blue-400" />,
                 label: "Technical",
                 value: feedback.technical,
               },
               {
-                icon: <MessageSquare size={14} className="text-amber-400" />,
+                icon: <MessageSquare size={14} className="text-blue-400" />,
                 label: "Communication",
                 value: feedback.communication,
               },
               {
-                icon: <TrendingUp size={14} className="text-amber-400" />,
+                icon: <TrendingUp size={14} className="text-blue-400" />,
                 label: "Problem Solving",
                 value: feedback.problemSolving,
               },

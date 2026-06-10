@@ -25,7 +25,7 @@ const Header = async () => {
                 <SignInButton mode='modal'>
                     <Button variant='ghost' >Sign In</Button>
                 </SignInButton>
-                <SignUpButton>
+                <SignUpButton mode='modal'>
                     <Button variant='blue' className={"py-5 text-white bg-blue-700"} >Get Started</Button>
                 </SignUpButton>
             </Show>
