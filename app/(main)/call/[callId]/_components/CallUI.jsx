@@ -22,12 +22,11 @@ import {
     MessageInput,
     useCreateChatClient,
 } from "stream-chat-react";
-// import { MessageInput } from "stream-chat-react/components";
 import "stream-chat-react/dist/css/v2/index.css";
 
 import { Badge } from "@/components/ui/badge";
 import { MessageSquare, Sparkles, Loader2 } from "lucide-react";
-// import AIQuestionsPanel from "./AIQuestions";
+import AIQuestionsPanel from "./AIQuestions";
 
 // ─── Call UI (inside StreamCall context) ─────────────────────────────────────
 
@@ -196,7 +195,7 @@ export default function CallUI({
                             )
                         ) : (
                             <div className="p-4 h-full overflow-y-scroll max-h-screen">
-                                {/*<AIQuestionsPanel categories={booking.categories} />*/}
+                                <AIQuestionsPanel categories={booking.categories} />
                             </div>
                         )}
                     </div>

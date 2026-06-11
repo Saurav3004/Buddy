@@ -90,7 +90,7 @@ export const bookSlot = async ({interviewerId,startTime,endTime}) => {
 
         let streamCallId;
         try {
-            const streamClient = new StreamClient(process.env.NEXT_PUBIC_STREAM_API_KEY,process.env.STREAM_SECRET_KEY);
+            const streamClient = new StreamClient(process.env.NEXT_PUBLIC_STREAM_API_KEY,process.env.STREAM_SECRET_KEY);
 
             await streamClient.upsertUsers([
                 {
