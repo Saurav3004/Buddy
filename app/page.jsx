@@ -17,7 +17,7 @@ function MockUI({ rows = 3 }) {
   const colors = [
     "bg-white/5",
     "bg-white/5",
-    "bg-amber-400/15",
+    "bg-blue-400/15",
     "bg-white/5",
     "bg-white/5",
   ];

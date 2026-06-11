@@ -31,7 +31,7 @@ export function FeedbackModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-black border border-amber-200/20 text-stone-100 sm:max-w-3xl max-h-[85vh] overflow-y-auto">
+      <DialogContent className="bg-black border border-blue-200/20 text-stone-100 sm:max-w-3xl max-h-[85vh] overflow-y-auto">
         <GravityStarsBackgroundDemo />
 
         <DialogHeader className="relative">
@@ -142,7 +142,7 @@ export function FeedbackModal({
 
             <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
-                <AlertCircle size={13} className="text-amber-400" />
+                <AlertCircle size={13} className="text-blue-400" />
                 <p className="text-[10px] uppercase tracking-widest text-stone-500">
                   To improve
                 </p>

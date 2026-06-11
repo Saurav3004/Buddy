@@ -32,7 +32,7 @@ export default function AIQuestionsPanel({ categories }) {
                         onClick={() => setSelectedCategory(cat)}
                         className={`text-xs px-3 py-1.5 rounded-lg border transition-all ${
                             selectedCategory === cat
-                                ? "border-amber-400/40 bg-amber-400/10 text-amber-400"
+                                ? "border-blue-400/40 bg-blue-400/10 text-blue-400"
                                 : "border-white/10 text-stone-500 hover:border-white/20 hover:text-stone-400"
                         }`}
                     >
@@ -78,7 +78,7 @@ export default function AIQuestionsPanel({ categories }) {
                             </p>
                             <div className="h-px bg-white/5" />
                             <p className="text-xs text-stone-500 font-light leading-relaxed">
-                                <span className="text-amber-400/70 font-medium">Answer: </span>
+                                <span className="text-blue-400/70 font-medium">Answer: </span>
                                 {q.answer}
                             </p>
                         </div>
@@ -86,8 +86,8 @@ export default function AIQuestionsPanel({ categories }) {
                 </div>
             ) : (
                 <div className="flex-1 flex flex-col items-center justify-center gap-2 text-center">
-          <span className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-            <Sparkles size={16} className="text-amber-400" />
+          <span className="w-10 h-10 rounded-xl bg-blue-400/10 border border-blue-400/20 flex items-center justify-center">
+            <Sparkles size={16} className="text-blue-400" />
           </span>
                     <p className="text-xs text-stone-600">
                         Select a category and generate role-specific questions for this

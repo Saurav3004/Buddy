@@ -124,7 +124,7 @@ export default function CallUI({
                     {isInterviewer && (
                         <Badge
                             variant="outline"
-                            className="border-amber-400/20 bg-amber-400/5 text-amber-400 text-xs"
+                            className="border-blue-400/20 bg-blue-400/5 text-blue-400 text-xs"
                         >
                             Interviewer
                         </Badge>
@@ -151,7 +151,7 @@ export default function CallUI({
                             onClick={() => setActiveTab("chat")}
                             className={`flex-1 flex items-center justify-center gap-2 py-3 text-xs font-medium transition-colors ${
                                 activeTab === "chat"
-                                    ? "text-amber-400 border-b-2 border-amber-400"
+                                    ? "text-blue-400 border-b-2 border-blue-400"
                                     : "text-stone-500 hover:text-stone-300"
                             }`}
                         >
@@ -166,7 +166,7 @@ export default function CallUI({
                                 onClick={() => setActiveTab("ai")}
                                 className={`flex-1 flex items-center justify-center gap-2 py-3 text-xs font-medium transition-colors ${
                                     activeTab === "ai"
-                                        ? "text-amber-400 border-b-2 border-amber-400"
+                                        ? "text-blue-400 border-b-2 border-blue-400"
                                         : "text-stone-500 hover:text-stone-300"
                                 }`}
                             >
