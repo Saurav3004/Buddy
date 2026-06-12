@@ -242,16 +242,23 @@ export default function Home() {
                     <SectionHeading gray={"Simple, transparent"} blue={"credit-based plans"}/>
                     <p className="text-stone-400 mt-3 text-sm">Each credit = one session. Unused credits roll over.</p>
                   </div>
-
-                  <PricingTable checkoutProps={{
-                    appearance:{
-                      elements:{
-                        drawerRoot:{
-                          zIndex:2000
-                        }
-                      }
-                    }
-                  }} />
+                  
+                  <PricingTable
+  appearance={{
+    elements: {
+      pricingTable: "flex flex-col",
+      pricingTablePlan: "w-full",
+    }
+  }}
+  checkoutProps={{
+    appearance: {
+      elements: {
+        drawerRoot: { zIndex: 2000 }
+      }
+    }
+  }}
+/>
+                  
                   </section>
 
                   <section className="relative z-10 pb-28 max-w-5xl mx-auto px-6">

@@ -126,6 +126,23 @@
   }
 }
 
+/* Clerk PricingTable layout fixes */
 .cl-pricingTable {
-  grid-template-columns: auto auto auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 768px) {
+  .cl-pricingTable {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cl-pricingTablePlan,
+  .cl-planCard,
+  .cl-pricingTablePlanCard {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
 }
