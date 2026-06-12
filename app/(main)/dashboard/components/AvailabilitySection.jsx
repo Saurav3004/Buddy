@@ -129,7 +129,7 @@ export default function AvailabilitySection({ initial }) {
 
       {/* Save */}
       <Button
-        variant="gold"
+        variant="blue"
         disabled={!hasWindow || loading}
         onClick={handleSave}
         className="self-start"

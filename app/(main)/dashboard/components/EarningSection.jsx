@@ -82,7 +82,7 @@ export default function EarningsSection({ stats, history }) {
             label: "Credit balance",
             value: stats?.creditBalance ?? 0,
             unit: "credits",
-            gold: true,
+            blue: true,
             icon: <Wallet size={16} className="text-blue-400" />,
             dollarValue: balance,
           },
@@ -90,7 +90,7 @@ export default function EarningsSection({ stats, history }) {
             label: "Total earned",
             value: stats?.totalEarned ?? 0,
             unit: "credits",
-            gold: false,
+            blue: false,
             icon: <TrendingUp size={16} className="text-stone-400" />,
             dollarValue: totalEarnedDollars,
           },
@@ -98,7 +98,7 @@ export default function EarningsSection({ stats, history }) {
             label: "Sessions done",
             value: stats?.completedSessions ?? 0,
             unit: "completed",
-            gold: false,
+            blue: false,
             icon: <CircleCheck size={16} className="text-stone-400" />,
           },
         ].map((stat) => (
@@ -109,7 +109,7 @@ export default function EarningsSection({ stats, history }) {
             <span className="text-lg">{stat.icon}</span>
             <p
               className={`font-serif text-4xl leading-none tracking-tight ${
-                stat.gold
+                stat.blue
                   ? "bg-linear-to-br from-blue-300 to-blue-500 bg-clip-text text-transparent"
                   : "bg-linear-to-br from-stone-100 to-stone-400 bg-clip-text text-transparent"
               }`}
@@ -139,7 +139,7 @@ export default function EarningsSection({ stats, history }) {
           </p>
         </div>
         <Button
-          variant="gold"
+          variant="blue"
           disabled={balance <= 0}
           onClick={() => setOpen(true)}
           className="shrink-0"
@@ -287,7 +287,7 @@ export default function EarningsSection({ stats, history }) {
                   Cancel
                 </Button>
                 <Button
-                  variant="gold"
+                  variant="blue"
                   disabled={!isValid || loading}
                   onClick={() =>
                     withdrawFn({

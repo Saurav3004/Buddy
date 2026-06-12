@@ -42,7 +42,7 @@ export default function AIQuestionsPanel({ categories }) {
             </div>
 
             <Button
-                variant="gold"
+                variant="blue"
                 size="sm"
                 disabled={loading || !selectedCategory}
                 onClick={() => generateFn({ category: selectedCategory })}
